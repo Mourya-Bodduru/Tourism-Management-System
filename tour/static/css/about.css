@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+ }
+ 
+ .total{
+    display:flex;
+    height:100%;
+   }
+   .row1{
+       display:flex;
+       height:4%;
+       align-items: center;
+   }
+   .bg1{
+       background-color: white;
+   }
+   .row2{
+       display:flex;
+       height:9%;
+       align-items: center;
+       text-align: center;
+   }
+   .butt1{
+       background-image: linear-gradient(to bottom right, red, yellow);
+       border-radius: 10px;
+       width: 140px;
+       height: 40px;
+       border: none;
+       color:white;
+       position: relative;
+       animation-name: buttons;
+       animation-duration: 3s;
+       animation-iteration-count: 1;
+       animation-direction: alternate;
+   }
+   .butt2{
+       background-image: linear-gradient(to bottom right, rgb(83, 12, 205), rgb(33, 216, 164));
+       border-radius: 10px;
+       width:100px;
+       height: 40px;
+       border: none;
+       color:white;
+       position: relative;
+       animation-name: buttons1;
+       animation-duration: 3s;
+       animation-iteration-count: 1;
+       animation-direction: alternate;
+   }
+   .butt1:hover{
+       background-image: linear-gradient( rgb(225, 13, 172), rgb(40, 183, 235));
+       color:rgb(231, 223, 189);
+   }
+   .butt2:hover{
+       background-image: linear-gradient( rgb(152, 213, 47), rgb(40, 183, 235));
+       color:rgb(231, 223, 189);
+   }
+   .homeimg{
+   height:40px;
+   width:40px;
+   }
+   @keyframes buttons {
+       75%  { left:-200px; top:200px;}
+     100% { left:0px; top:0px;}
+   }
+   @keyframes buttons1 {
+       75%  { left:1000px; top:200px;}
+     100% { left:0px; top:0px;}
+   }
+   .row3{
+       display:flex;
+       height:4%;
+       align-items: center;
+   }
+   .img2{
+       width:100px;
+       height:90px;
+   }
+   .butt3{
+       background-image: linear-gradient( to bottom right,rgb(241, 193, 131),rgb(195, 125, 230));
+       border-radius: 10px;
+       width:110px;
+       border:none;
+       height:30px;
+       font-weight: bold;
+       position: relative;
+       animation-name: buttons2;
+       animation-duration: 3s;
+       animation-iteration-count: 1;
+       animation-direction: alternate;
+   }
+   .butt4{
+       background-image: linear-gradient( to bottom right,rgb(241, 193, 131),rgb(195, 125, 230));
+       border-radius: 10px;
+       width:150px;
+       border:none;
+       height:30px;
+       font-weight: bold;
+       position: relative;
+       animation-name: buttons3;
+       animation-duration: 4s;
+       animation-iteration-count: 1;
+       animation-direction: alternate;
+   }
+   .butt5{
+       background-image: linear-gradient( to bottom right,rgb(241, 193, 131),rgb(195, 125, 230));
+       border-radius: 10px;
+       width:110px;
+       border:none;
+       height:30px;
+       font-weight: bold;
+       position: relative;
+       animation-name: buttons4;
+       animation-duration: 5s;
+       animation-iteration-count: 1;
+       animation-direction: alternate;
+   }
+   .butt6{
+       background-image: linear-gradient( to bottom right,rgb(241, 193, 131),rgb(195, 125, 230));
+       border-radius: 10px;
+       width:120px;
+       border:none;
+       height:30px;
+       font-weight: bold;
+       position: relative;
+       animation-name: buttons5;
+       animation-duration: 6s;
+       animation-iteration-count: 1;
+       animation-direction: alternate;
+   }
+   .butt3:hover,.butt4:hover,.butt5:hover,.butt6:hover{
+       color:rgb(13, 73, 122);
+       background-image: linear-gradient( to bottom right,rgb(252, 252, 252),rgb(192, 238, 40));
+   }
+   
+   @keyframes buttons2 {
+       75%  { left:-400px; top:200px;}
+     100% { left:0px; top:0px;}
+   }
+   @keyframes buttons3 {
+       75%  { left:-800px; top:200px;}
+     100% { left:0px; top:0px;}
+   }
+   @keyframes buttons4 {
+       75%  { left:-1000px; top:200px;}
+     100% { left:0px; top:0px;}
+   }
+   @keyframes buttons5 {
+       75%  { left:-1200px; top:200px;}
+     100% { left:0px; top:0px;}
+   }
+   .row4{
+    display:flex;
+    height:26%;
+   }
+.image1{
+    width:300px;
+    height:300px;   
+}
+.row5{
+    display:flex;
+    height:60%;
+}
+p{
+    font-size: 18px;
+    font-weight: bold;
+}

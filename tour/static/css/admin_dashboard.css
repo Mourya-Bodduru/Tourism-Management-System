@@ -1,0 +1,115 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700");
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.container{
+  display: flex;
+}
+nav{
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  left: 0;
+  width: 280px;
+  overflow: hidden;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  background: rgba(255,255,255,0.5);
+}
+.logo{
+  text-align: center;
+  display: flex;  
+}
+.logo img{
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.logo span{
+  font-weight: bold;
+  
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.a1{
+  text-decoration:none; 
+  position: relative;
+  font-weight: bold;
+  color:black;
+  font-size: 16px;
+  display: table;
+  width: 280px;
+  padding: 10px;
+}
+nav .fas{
+  position: relative;
+  width: 70px;
+  height: 40px;
+  top: 14px;
+  font-size: 20px;
+  text-align: center;
+}
+.nav-item{
+  position: relative;
+  top: 12px;
+}
+.a1:hover{
+  background:#D5DEEF;
+  text-decoration: none;
+  border-radius: 30px;
+}
+.a1.sticky:hover{
+  background: #aa2b2b;
+  
+  border-radius: 30px;
+}
+
+.logout{
+  position: absolute;
+  bottom: 0;
+}
+.sec{
+    position :absolute;
+    left: 290px;
+    top:0;
+}
+@media screen and (max-width: 768px) {
+  .nav{
+      width: 100%;
+      height: auto;
+      position: static;
+  }
+  
+  .sec{
+      margin-left: 0;
+  }
+}
+.text1{
+  font-size: 5em;
+  font-weight: 800;
+  line-height: 1em;
+  text-transform: uppercase;
+  margin-left: 150px;
+  margin-top: 200px;
+  color: maroon;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  position: relative;
+  animation-name: text;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+}
+
+@keyframes text {
+    75%  { left:1000px; top:0px;}
+    100% { left:0px; top:0px;}
+}
+

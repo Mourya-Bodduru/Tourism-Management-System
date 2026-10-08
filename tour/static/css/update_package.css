@@ -1,0 +1,14 @@
+.form{
+    margin-left: 300px;
+    padding:10px;
+    width:50%;
+    border:3px outset hotpink;
+    border-radius: 30px;
+}
+h1{
+    text-align: center;
+}
+
+.but{
+    margin-left: 250px;
+}

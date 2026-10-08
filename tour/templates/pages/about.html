@@ -1,0 +1,89 @@
+{% extends "pages/master.html" %}
+ {% load static %}
+
+ {% block title %}
+About
+ {% endblock %}
+ {% block extra_head %}
+ <link rel="stylesheet" href="{% static 'css/about.css' %}">
+ 
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+         crossorigin="anonymous"></script>  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+ {% endblock %}
+ 
+ {% block content %}
+ <body style=" background-image: url('{% static "assets/bg.png" %}');
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
+ background-attachment: fixed;">
+ <section>
+
+<div class="total" >
+    <div class="col-12">
+         <div class="row1 bg1">
+             <div class="col-6 d-flex ms-5 ">
+                 <a href="{% url 'admin_login' %}"><button class="butt1"><b>Admin Login</b></button></a>
+             </div>
+             <div class="col-6 d-flex justify-content-evenly text-white">
+                 <a href="{% url 'sign_up' %}"><button class="butt2"><b>SignUp</b></button></a>
+                 <a href="{% url 'sign_in' %}"><button class="butt2"><b>SignIn</b></button></a>
+             </div>
+         </div>
+         <div class="row2" style="background-image:url('{% static "assets/img7.jpeg" %}');background-size:contain;">
+             <div class="col-3 ">
+                 <img class="img2" src="{% static '\assets\img9.png' %}" alt="logo">
+             </div>
+             <div class="col-9 ">
+                 <h1 style="font-family:Monospace;text-shadow: 2px 2px 5px red;"><b><i>Tour's and Travel's</i></b></h1>
+             </div>
+         </div>
+         <div class="row3 bg-light ">
+            <div class="col-2 d-flex justify-content-around">
+                <a  href="{% url 'home' %}"> <img class="homeimg" src="{% static '\assets\home5.png' %}" alt="home "></a>
+            </div>
+            <div class="col-10 d-flex justify-content-around">
+                <a href="{% url 'about' %}"><button class="butt3">About</button></a>
+                <a href="{% url 'tour_package' %}"><button class="butt4">Tour Packages</button></a>
+                <a href="{% url 'enquiry' %}"><button class="butt5">Enquiry</button></a>
+                <a href="{% url 'contact_us' %}"><button class="butt6">Contact Us</button></a>
+            </div>
+        </div><br>
+         <div class="row4">
+            <div class="col-12 d-flex justify-content-center">
+            <img class="image1" src="{% static "assets/img9.png" %}" >
+            </div>
+         </div>
+         <div class="row5">
+            <div class="col-1">
+            </div>
+            <div class="col-10">
+                <p>
+                    "Tours and travels" is an industry dedicated to facilitating travel experiences for individuals, families, and groups. At its core, it encompasses a wide range of services aimed at organizing, planning, and executing trips to various destinations around the world.
+
+This industry caters to diverse interests and preferences, offering an array of travel options such as leisure vacations, adventure tours, cultural experiences, eco-tourism, and more. Whether it's exploring iconic landmarks in bustling cities, embarking on thrilling outdoor adventures, or immersing oneself in the rich tapestry of different cultures, tours and travels aim to fulfill the wanderlust of travelers while ensuring convenience, comfort, and safety.
+
+Key components of the tours and travels industry include:<br>
+
+<h3>Travel Agencies:</h3> <p>These entities specialize in arranging and coordinating travel logistics such as transportation, accommodation, tours, activities, and travel insurance. They often provide personalized itineraries tailored to clients' preferences and budget.</p><br>
+
+<h3>Tour Operators:</h3> <p>Tour operators design and operate packaged tours, which may include guided sightseeing tours, adventure expeditions, cruises, or themed travel experiences. They handle all aspects of the tour, from planning and logistics to on-ground support and activities.</p><br>
+
+<h3>Online Travel Platforms:</h3> <p>With the advent of technology, online travel platforms have become increasingly popular, offering a convenient way for travelers to research, book, and manage their trips. These platforms aggregate travel-related services from various suppliers, allowing users to compare prices, read reviews, and make bookings online.</p><br>
+
+<h3>Destination Management Companies (DMCs):</h3> <p>DMCs specialize in providing ground handling services in specific destinations. They have in-depth knowledge of local attractions, culture, and logistics, making them valuable partners for organizing seamless travel experiences.</p><br>
+
+<p>Overall, the tours and travels industry plays a vital role in promoting tourism and fostering cultural exchange, contributing to economic growth and global connectivity. Whether for leisure, adventure, or exploration, tours and travels offer endless possibilities for discovering the world and creating cherished memories.</p>
+                </p>
+            </div>
+            <div class="col-1">
+            </div>
+         </div>
+    </div>
+</div>
+</body>
+{% endblock %}

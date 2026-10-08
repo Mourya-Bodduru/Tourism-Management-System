@@ -1,0 +1,85 @@
+{% extends "pages/master.html" %}
+ {% load static %}
+
+ {% block title %}
+ Admin Raised ticket
+ {% endblock %}
+ {% block extra_head %}
+ <link rel="stylesheet" href="{% static 'css/admin_raisedticket.css' %}">
+ 
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+         crossorigin="anonymous"></script>  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+ {% endblock %}
+ 
+ {% block content %}
+ <body style=" background-image: url('{% static "assets/img11.jpg" %}');
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
+ background-attachment: fixed;">
+<section class="sec1">
+    <table style="text-align:center;">
+        <tr style="background-color:white;">
+            <th>S.no</th>
+            <th>Username</th>
+            <th>Email</th>
+            
+            <th>Tour Name</th>
+            <th>Location</th>
+            <th>Details</th>
+            <th>Operations</th>
+        </tr>
+        {% for data in ticket %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ data.username }}</td>
+            <td>{{ data.email }}</td>
+            <td>{{ data.tour_name }}</td>
+            <td>{{ data.location }}</td>
+            <td>{{ data.details }}</td>
+            <td>
+                <button class="btn btn-info" onclick="openModal('{{ data.id }}')">Reply</button>
+                
+             </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="modal fade" id="replyModal" tabindex="-1" aria-labelledby="replyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="replyModalLabel">Reply to User raised ticket</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="replyForm" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="data_id" id="data_id">
+                        <div class="mb-3">
+                            <label for="reply_message" class="form-label">Reply Message</label>
+                            <textarea class="form-control" id="reply_message" name="reply_message" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Reply</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function openModal(dataId) { 
+            var form = document.getElementById('replyForm');
+            form.action = "/send_reply_email_ticket/" + dataId + "/";
+            $('#replyModal').modal('show');
+        }
+    </script> 
+</section>
+</body>
+{% endblock %}

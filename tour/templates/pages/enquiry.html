@@ -1,0 +1,100 @@
+{% extends "pages/master.html" %}
+ {% load static %}
+ <html>
+ {% block title %}
+ Enquiry
+ {% endblock %}
+ {% block extra_head %}
+ <link rel="stylesheet" href="{% static 'css/enquiry.css' %}">
+ 
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+         crossorigin="anonymous"></script>  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+ {% endblock %}
+ 
+ {% block content %}
+ <body style=" background-image: url('{% static "assets/bg.png" %}');
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
+ background-attachment: fixed;">
+ <section>
+
+<div class="total" >
+    <div class="col-12">
+         <div class="row1 bg1">
+             <div class="col-6 d-flex ms-5 ">
+                 <a href="{% url 'admin_login' %}"><button class="butt1"><b>Admin Login</b></button></a>
+             </div>
+             <div class="col-6 d-flex justify-content-evenly text-white">
+                 <a href="{% url 'sign_up' %}"><button class="butt2"><b>SignUp</b></button></a>
+                 <a href="{% url 'sign_in' %}"><button class="butt2"><b>SignIn</b></button></a>
+             </div>
+         </div>
+         <div class="row2" style="background-image:url('{% static "assets/img7.jpeg" %}');background-size:contain;">
+             <div class="col-3 ">
+                 <img class="img2" src="{% static '\assets\img9.png' %}" alt="logo">
+             </div>
+             <div class="col-9 ">
+                 <h1 style="font-family:Monospace;text-shadow: 2px 2px 5px red;"><b><i>Tour's and Travel's</i></b></h1>
+             </div>
+         </div>
+         <div class="row3 bg-light ">
+            <div class="col-2 d-flex justify-content-around">
+                <a  href="{% url 'home' %}"> <img class="homeimg" src="{% static '\assets\home5.png' %}" alt="home "></a>
+            </div>
+            <div class="col-10 d-flex justify-content-around">
+                <a href="{% url 'about' %}"><button class="butt3">About</button></a>
+                <a href="{% url 'tour_package' %}"><button class="butt4">Tour Packages</button></a>
+                <a href="{% url 'enquiry' %}"><button class="butt5">Enquiry</button></a>
+                <a href="{% url 'contact_us' %}"><button class="butt6">Contact Us</button></a>
+            </div>
+        </div><br>
+         <div class="row4">
+            <div class="col-12 d-flex align-items-center ">
+                <div class="col-3 d-flex justify-content-center">
+                    <h1 class="text1">Enquiry
+                        Form</h1>
+                </div>
+                <div class="col-8 d-flex justify-content-center">
+                    <form action="{% url 'enquiry' %}" method="POST" class="form">
+                        {% csrf_token %}
+                    <div class="form-floating mb-3">
+                        <input type="text" name="username" class="form-control rounded-pill border border-info" id="floatingInput" placeholder="Username" required>
+                        <label for="floatingInput">Username</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input type="email" name="email" class="form-control rounded-pill border border-info" id="floatingPassword" placeholder="Email" required>
+                        <label for="floatingPassword">Email address</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input type="phone" name="mobile_no" class="form-control rounded-pill border border-info" id="floatingPassword" placeholder="Mobile Number" required>
+                        <label for="floatingPassword">Mobile number</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <input type="text" name="subject" class="form-control rounded-pill border border-info" id="floatingPassword" placeholder="Subject" required>
+                        <label for="floatingPassword">Subject</label>
+                      </div>
+                      <div class="form-floating mb-3">
+                        <textarea class="form-control rounded-pill border border-info" name="description" placeholder="Description" id="floatingTextarea" required></textarea>
+                        <label for="floatingTextarea">Description</label>
+                      </div>
+                      <button class="btn btn-primary rounded-pill border border-info butt" type="submit">Submit</button>
+                    </form>
+                </div>
+                <div class="col-1">
+                </div>
+            </div>
+         </div>
+    </div>
+</div>
+{% if messages %}
+<script>
+    alert("{% for msg in messages %}{{ msg }}{% endfor %}");
+</script>
+{% endif %}
+</body>
+{% endblock %}

@@ -1,0 +1,38 @@
+*{
+    margin:0;
+    padding:0;
+}
+.sec1{
+margin-top: 50px;
+margin-left: 200px;
+}
+.form{
+    width:70%;
+    border:3px outset hotpink;
+    border-radius: 30px;
+    padding:10px;
+}
+
+.butt{
+    margin-top: -10px;
+    margin-left: 155px;
+}
+.colorful-text {
+    animation: rainbow-text 1s linear infinite;
+  }
+  
+  @keyframes rainbow-text {
+    0% { color: #ff0000; } /* Red */
+    20% { color: #ff8000; } /* Orange */
+    40% { color: #ffff00; } /* Yellow */
+    60% { color: #00ff00; } /* Green */
+    80% { color: #0000ff; } /* Blue */
+    100% { color: #800080; } /* Purple */
+  }
+  
+.suggest{
+    margin-top:30px;
+    margin-left:100px;
+    font-size:25px;
+    font-weight:bold;
+}

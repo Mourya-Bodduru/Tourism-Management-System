@@ -1,0 +1,23 @@
+*{
+    margin:0;
+    padding:0;
+}
+.sec1{
+margin-top: 10px;
+margin-left: 20px;
+
+}
+table{
+    border:3px solid coral;
+    
+    font-weight: bold;
+    
+}
+th, td {
+    border:1px solid maroon;
+    padding: 7px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #d7d8f3;
+  }

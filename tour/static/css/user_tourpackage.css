@@ -1,0 +1,14 @@
+*{
+    margin:0;
+    padding:0;
+}
+.sec1{
+margin-top: 10px;
+margin-left: 200px;
+
+}
+
+.row4{
+    display: flex;
+    height:20%;
+}

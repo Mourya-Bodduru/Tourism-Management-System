@@ -1,0 +1,63 @@
+{% extends "pages/master.html" %}
+ {% load static %}
+
+ {% block title %}
+Manage Package
+ {% endblock %}
+ {% block extra_head %}
+ <link rel="stylesheet" href="{% static 'css/manage_package.css' %}">
+ 
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+         crossorigin="anonymous"></script>  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+ {% endblock %}
+ 
+ {% block content %}
+ <body style=" background-image: url('{% static "assets/img11.jpg" %}');
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
+ background-attachment: fixed;">
+
+
+<section class="sec1">
+    <table style="text-align:center;">
+        <tr style="background-color:white;">
+            <th>S.no</th>
+            <th>Package Name</th>
+            <th>Package Type</th>
+            <th>Package Location</th>
+            <th>Package Price</th>
+            <th>Package Features</th>
+            <th>Package Details</th>
+            <th>Image</th>
+            <th>Operations</th>
+        </tr>
+
+        {% for package in packages %} 
+<tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ package.package_name }}</td>
+    <td>{{ package.package_type }}</td>
+    <td>{{ package.package_location }}</td>
+    <td>${{ package.package_price }}</td>
+    <td>{{ package.package_features }}</td>
+    <td>{{ package.package_details }}</td>
+    <td>
+        {% if package.package_image %}
+        <img class="img1" src="{{ package.package_image.url }}" />
+        {% endif %}
+    </td>
+    <td>
+        <a href="{% url 'update_package' pk=package.id %}"> <button class="btn btn-primary">Edit</button></a>
+        <a href="{% url 'delete_package' id=package.id %}"> <button class="btn btn-danger">Delete</button> </a> 
+    </td>
+</tr>
+{% endfor %}
+    </table>
+</section>
+</body>
+{% endblock %}

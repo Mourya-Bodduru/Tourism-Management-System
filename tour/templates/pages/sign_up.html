@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/sign_up.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Register</title>
+</head>
+<body style=" background-image: url('{% static "assets/tower.png" %}');
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed;
+">
+<a href="javascript:history.go(-1);" class="back-button">
+    <i style="color:red;" class="bx bx-arrow-back"></i>
+</a>
+     <div class="box">
+        <div class="container">
+            <form action="{% url 'sign_up' %}" method="POST" class="form">
+                {% csrf_token %}
+            <div class="input-field">
+                <input type="text" class="input" name="username" placeholder="Username" required>
+                <i class="bx bx-user"></i>
+            </div>
+            <div class="input-field">
+                <input type="email" class="input" name="email" placeholder="Email" required>
+                <i class="bi bi-envelope"></i>
+            </div>
+            <div class="input-field">
+                <input type="phone" class="input" name="mobile_no" placeholder="Mobile Number" required>
+                <i class="bi bi-phone"></i>
+            </div>
+            <div class="input-field">
+                <input type="password" class="input" name="password" placeholder="Password" required>
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <div class="input-field">
+                <input type="password" class="input" name="confirm_password" placeholder="Confirm Password" required>
+                <i class="bx bx-lock-alt"></i>
+            </div>
+            <div class="input-field">
+                <input type="submit" class="submit" value="Register">
+            </div>
+            <p style="color:white;">Have An Account.Please Login..<a href="{% url 'sign_in' %}">Login</a></p>
+        </form>
+        </div>
+    </div>
+
+    {% if messages %}
+    <script>
+        alert("{% for msg in messages %}{{ msg }}{% endfor %}");
+    </script>
+    {% endif %}
+</body>
+</html>

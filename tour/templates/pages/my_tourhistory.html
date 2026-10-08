@@ -1,0 +1,51 @@
+{% extends "pages/master.html" %}
+ {% load static %}
+
+ {% block title %}
+ My tour history
+ {% endblock %}
+ {% block extra_head %}
+ <link rel="stylesheet" href="{% static 'css/my_tourhistory.css' %}">
+ 
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+         crossorigin="anonymous"></script>  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+ {% endblock %}
+ 
+ {% block content %}
+ <body style=" background-image: url('{% static "assets/img11.jpg" %}');
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center;
+ background-attachment: fixed;">
+
+
+<section class="sec1">
+   
+    <table style="text-align:center;">
+        <tr style="background-color:white;">
+            <th>S.no</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Package Name</th>
+            <th>Operation</th>
+        </tr>
+        {% for x in cart_items %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{x.username.username}}</td>
+            <td>{{x.username.email}}</td>
+            <td>{{x.package_name.package_name}}</td>
+            <td>
+               
+               <a href="{% url 'cancel_booking' x.id %}"> <button class="btn btn-danger">Cancel booking</button> </a> 
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</section>
+</body>
+{% endblock %}
